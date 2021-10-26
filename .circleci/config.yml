@@ -1,4 +1,6 @@
 version: 2.1
+orbs:
+  mac: circleci/macos@2
 
 jobs: # a basic unit of work in a run
   test: # your job name
@@ -6,6 +8,10 @@ jobs: # a basic unit of work in a run
       xcode: 13.1.0 # indicate our selected version of Xcode
     steps: # a series of commands to run
       - checkout  # pull down code from your version control system.
+      - macos/preboot-simulator:
+          version: "15.0"
+          platform: "iOS"
+          device: "iPhone 13 Pro Max"
       - run:
           name: Run Unit Tests
           command: xcodebuild test -scheme circleci-demo-macos
