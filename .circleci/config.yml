@@ -8,7 +8,7 @@ jobs: # a basic unit of work in a run
       xcode: 13.1.0 # indicate our selected version of Xcode
     steps: # a series of commands to run
       - checkout  # pull down code from your version control system.
-      - macos/preboot-simulator:
+      - mac/preboot-simulator:
           version: "15.0"
           platform: "iOS"
           device: "iPhone 13 Pro Max"
