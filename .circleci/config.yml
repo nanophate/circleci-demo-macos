@@ -11,7 +11,7 @@ jobs: # a basic unit of work in a run
       - macos/preboot-simulator:
           version: "15.0"
           platform: "iOS"
-          device: "iPhone 13 Pro Max"
+          device: "iPhone 12 mini"
       - run:
           name: Run Unit Tests
           command: xcodebuild test -scheme circleci-demo-macos
